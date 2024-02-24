@@ -82,14 +82,14 @@ def logout_user(request):
     global curr_indian_timezone
     global correct_answer_list
     
-    collection_counter=collections.Counter(correct_answer_list)
+    collection_counter=str(collections.Counter(correct_answer_list))
     print(collection_counter)
     list=str(correct_answer_list)
     print(list)
     curr=timezone.now()
     curr_indian_timezone=curr.astimezone(pytz.timezone('Asia/Kolkata'))
     time=str(curr_indian_timezone-start_indian_timezone).split(":")
-    restime=f"|| {time[0]} hr : {time[1]} min : {time[2]} sec ||"
+    restime=f"|| {time[0]} hr : {time[1]} min : {time[2]} sec || {collection_counter}"
     print(restime)
     user_name=str(request.user)
     savedata=SubmittedData.objects.create(candidate=user_name,time=restime,list=list)
