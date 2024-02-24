@@ -4,16 +4,32 @@ document.addEventListener('contextmenu', function (e) {
 });
 
 document.addEventListener('keydown', function (e) {
-    if (((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'I') || 
-    ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'C') || 
-    ((e.ctrlKey || e.metaKey) && e.altKey && e.key === 'C') || 
-    ((e.ctrlKey || e.metaKey) && e.altKey && e.key === 'I')) {
+    const isCtrlOrMeta = e.ctrlKey || e.metaKey;
+    const isShift = e.shiftKey;
+    const isAlt = e.altKey;
+    const isCapsLock = e.getModifierState('CapsLock');
+
+    if (
+        (isCtrlOrMeta && isShift && e.key === 'I') ||
+        (isCtrlOrMeta && isShift && e.key === 'C') ||
+        (isCtrlOrMeta && isAlt && e.key === 'C') ||
+        (isCtrlOrMeta && isAlt && e.key === 'I') ||
+        (isCtrlOrMeta && isShift && e.key === 'I' && isCapsLock) ||
+        (isCtrlOrMeta && isShift && e.key === 'C' && isCapsLock) ||
+        (isCtrlOrMeta && isAlt && e.key === 'C' && isCapsLock) ||
+        (isCtrlOrMeta && isAlt && e.key === 'I' && isCapsLock)
+    ) {
         e.preventDefault();
     }
 });
 
 document.addEventListener('keydown', function (e) {
     if ((e.key === 'F12')) {
+        e.preventDefault();
+    }
+});
+document.addEventListener('keydown', function (e) {
+    if ((e.key === 'CapsLock')) {
         e.preventDefault();
     }
 });
