@@ -4,15 +4,16 @@ document.addEventListener('contextmenu', function (e) {
 });
 
 document.addEventListener('keydown', function (e) {
-    if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'I') {
-        // Prevent the default behavior (opening developer tools)
+    if (((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'I') || 
+    ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'C') || 
+    ((e.ctrlKey || e.metaKey) && e.altKey && e.key === 'C') || 
+    ((e.ctrlKey || e.metaKey) && e.altKey && e.key === 'I')) {
         e.preventDefault();
     }
 });
 
 document.addEventListener('keydown', function (e) {
-    if ((e.key === 'F12') ) {
-        // Prevent the default behavior (opening developer tools)
+    if ((e.key === 'F12')) {
         e.preventDefault();
     }
 });
