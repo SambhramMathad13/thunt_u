@@ -9,4 +9,4 @@ class SubmittedData(models.Model):
 
     
     def __str__(self):       
-        return self.candidate +" submited at "+ self.time+"--> "+ self.list
+        return self.candidate +" time taken: "+ self.time+" ==>> "+ self.list
