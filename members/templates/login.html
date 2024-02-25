@@ -1,40 +1,53 @@
 <!-- templates/login.html -->
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% load static  %}
-    <link rel="stylesheet" href="{% static 'login.css' %}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="{% static 'disableContextMenu.js' %}"></script>
-    <title>Login</title>
+  <meta charset="utf-8">
+  <meta name="viewport" width="device-width, initial-scale=1.0">
+  {% load static  %}
+  <link rel="stylesheet" href="{% static 'loginPage.css' %}">
+  <link rel="stylesheet" href="style_login.css">
+  <script src="{% static 'disableContextMenu.js' %}"></script>
+  <title>Login</title>
 </head>
 <body>
-    <h2 class="container">Login</h2>
-    <form action="" method=POST class="container">
+  <div class="container">
+    <div class="heading">
+      AURA 2K24
+    </div>
+    <div class="loginGroup">
+      <div class="title">TREASURE HUNT</div>
+      
+
+      <section class="card">
+        <form action="" method=POST class="container">
+            {% csrf_token %}
+            <div class="name">
+            <label for="username">User Name</label>
+            <input type="text" class="name_box"name="username" aria-describedby="emailHelp" placeholder="Enter your username" >
+            </div>
+    
+            <div class="name">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="name_box" name="password" placeholder="Enter your pasword">
+            </div>
+            <br>
+            <input type="submit" value="submit" id="login">
+            <br>
+        <div class="errorMsg">
         {% if messages %}
             {% for message in messages%}
             {{message}}
             {% endfor %}
         {% endif %}
-        {% csrf_token %}
-        <div class="form-group">
-        <label for="exampleInputEmail1">User Name</label>
-        <input type="text" class="form-control" name="username" aria-describedby="emailHelp" placeholder="Enter email">
         </div>
+        <br>
+        </form>
 
-        <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control" name="password" placeholder="Password">
-        </div>
-
-
-        <input type="submit" value="submit" class="btn btn-secondary">
-   
-    </form>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+      </section>
+    </div>
+  </div>
 </body>
+
 </html>
