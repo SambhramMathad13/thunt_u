@@ -12,6 +12,6 @@
 <body>
   <p class="main-text">Get Ready to Start the Hunt</p>
 
-  <button id="start" class="start-btn"><span>Click here to start</span></button>
+  <div id="start" class="start-btn"><span><a href="{% url 'question1' name=request.user.username %}">Click here to start</a></span></div>
 </body>
 </html>

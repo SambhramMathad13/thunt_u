@@ -29,12 +29,18 @@ def login_user(request):
             print(start_indian_timezone,"start timer")
             login(request,user)
             messages.success(request,("Logged in successfully. Your time has started!"))
-            return redirect(f"/question1/{request.user}")
+            return redirect(f"/home/{request.user}")
         else:
             messages.success(request,("please enter given id and password"))
             return redirect("/")
     else:
         return render(request,"login.html")
+    
+def home(request,name):
+    if request.user.is_authenticated:
+        return render(request,'home.html')
+    else:
+        redirect ("/") 
     
 def question1(request,name):
     global correct_answer_list
