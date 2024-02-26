@@ -24,7 +24,7 @@ def login_user(request):
         user=authenticate(request,username=username,password=password)
         if user is not None:
             start=timezone.now()
-            start_indian_timezone = start.astimezone(pytz.timezone('Asia/Kolkata')).replace(hour=12, minute=0, second=0, microsecond=0)
+            start_indian_timezone = start.astimezone(pytz.timezone('Asia/Kolkata')).replace(hour=10, minute=0, second=0, microsecond=0)
             # start_indian_timezone = start.astimezone(pytz.timezone('Asia/Kolkata'))
             print(start_indian_timezone,"start timer")
             login(request,user)
@@ -40,7 +40,7 @@ def home(request,name):
     if request.user.is_authenticated:
         return render(request,'home.html')
     else:
-        redirect ("/") 
+        redirect ("/")   
     
 def question1(request,name):
     global correct_answer_list
@@ -76,18 +76,17 @@ def question2(request,name):
         else:
             return render(request,'question2.html')         
     else:
-        return redirect('/login')
+        return redirect('/')
     
 def complete(request,name):
     if request.user.is_authenticated:
         return render(request,'complete.html')
     else:
-        return redirect('/login')
+        return redirect('/')
 
 def logout_user(request):
     global curr_indian_timezone
     global correct_answer_list
-    
     collection_counter=str(collections.Counter(correct_answer_list))
     print(collection_counter)
     list=str(correct_answer_list)
