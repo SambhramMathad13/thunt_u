@@ -24,7 +24,7 @@ def login_user(request):
         user=authenticate(request,username=username,password=password)
         if user is not None:
             start=timezone.now()
-            start_indian_timezone = start.astimezone(pytz.timezone('Asia/Kolkata')).replace(hour=10, minute=0, second=0, microsecond=0)
+            start_indian_timezone = start.astimezone(pytz.timezone('Asia/Kolkata')).replace(hour=12, minute=0, second=0, microsecond=0)
             # start_indian_timezone = start.astimezone(pytz.timezone('Asia/Kolkata'))
             print(start_indian_timezone,"start timer")
             login(request,user)
@@ -105,12 +105,84 @@ def question4(request,name):
             if answer==correct_answer:
                 correct_answer_list[3]="y"
                 messages.success(request,'Correct answer')
-                return redirect(f'/complete/{request.user}')
+                return redirect(f'/question5/{request.user}')
             else:
                 messages.success(request,'The answer is incorrect')
                 return render(request,'question4.html')
         else:
             return render(request,'question4.html')        
+    else:
+        return redirect('/')
+    
+def question5(request,name):
+    global correct_answer_list
+    if request.user.is_authenticated:
+        if request.method=="POST":
+            answer=validate_text(request.POST["answer"])
+            correct_answer="answer5"
+            if answer==correct_answer:
+                correct_answer_list[4]="y"
+                messages.success(request,'Correct answer')
+                return redirect(f'/question6/{request.user}')
+            else:
+                messages.success(request,'The answer is incorrect')
+                return render(request,'question5.html')
+        else:
+            return render(request,'question5.html')        
+    else:
+        return redirect('/')
+
+def question6(request,name):
+    global correct_answer_list
+    if request.user.is_authenticated:
+        if request.method=="POST":
+            answer=validate_text(request.POST["answer"])
+            correct_answer="answer6"
+            if answer==correct_answer:
+                correct_answer_list[5]="y"
+                messages.success(request,'Correct answer')
+                return redirect(f'/question7/{request.user}')
+            else:
+                messages.success(request,'The answer is incorrect')
+                return render(request,'question6.html')
+        else:
+            return render(request,'question6.html')        
+    else:
+        return redirect('/')
+
+def question7(request,name):
+    global correct_answer_list
+    if request.user.is_authenticated:
+        if request.method=="POST":
+            answer=validate_text(request.POST["answer"])
+            correct_answer="answer7"
+            if answer==correct_answer:
+                correct_answer_list[6]="y"
+                messages.success(request,'Correct answer')
+                return redirect(f'/question8/{request.user}')
+            else:
+                messages.success(request,'The answer is incorrect')
+                return render(request,'question7.html')
+        else:
+            return render(request,'question7.html')        
+    else:
+        return redirect('/')    
+    
+def question8(request,name):
+    global correct_answer_list
+    if request.user.is_authenticated:
+        if request.method=="POST":
+            answer=validate_text(request.POST["answer"])
+            correct_answer="answer8"
+            if answer==correct_answer:
+                correct_answer_list[7]="y"
+                messages.success(request,'Correct answer')
+                return redirect(f'/complete/{request.user}')
+            else:
+                messages.success(request,'The answer is incorrect')
+                return render(request,'question8.html')
+        else:
+            return render(request,'question8.html')        
     else:
         return redirect('/')
     
