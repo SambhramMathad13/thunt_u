@@ -69,12 +69,48 @@ def question2(request,name):
             if answer==correct_answer:
                 correct_answer_list[1]="y"
                 messages.success(request,'Correct answer. You have successfully completed the quiz.')
-                return redirect(f'/complete/{request.user}')
+                return redirect(f'/question3/{request.user}')
             else:
                 messages.success(request,'The answer is incorrect')
                 return render(request,'question2.html')
         else:
             return render(request,'question2.html')         
+    else:
+        return redirect('/')
+    
+def question3(request,name):
+    global correct_answer_list
+    if request.user.is_authenticated:
+        if request.method=="POST":
+            answer=validate_text(request.POST["answer"])
+            correct_answer="answer3"
+            if answer==correct_answer:
+                correct_answer_list[2]="y"
+                messages.success(request,'Correct answer')
+                return redirect(f'/question4/{request.user}')
+            else:
+                messages.success(request,'The answer is incorrect')
+                return render(request,'question3.html')
+        else:
+            return render(request,'question3.html')        
+    else:
+        return redirect('/')
+    
+def question4(request,name):
+    global correct_answer_list
+    if request.user.is_authenticated:
+        if request.method=="POST":
+            answer=validate_text(request.POST["answer"])
+            correct_answer="answer4"
+            if answer==correct_answer:
+                correct_answer_list[3]="y"
+                messages.success(request,'Correct answer')
+                return redirect(f'/complete/{request.user}')
+            else:
+                messages.success(request,'The answer is incorrect')
+                return render(request,'question4.html')
+        else:
+            return render(request,'question4.html')        
     else:
         return redirect('/')
     
