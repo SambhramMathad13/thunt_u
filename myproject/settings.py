@@ -8,22 +8,9 @@ SECRET_KEY = os.environ.get('SECRET')
 # DEBUG = True
 DEBUG = False
 
-<<<<<<< HEAD
 # ALLOWED_HOSTS = []
 ALLOWED_HOSTS = ['*']
 # CSRF_TRUSTED_ORIGINS = ['https://webattendease.2.sg-1.fl0.io']
-=======
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-$jm_g&#3=!f27%6x$nof)(jdt-lfo#z-g)v4hjt)*dvga^sccp"
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
-ALLOWED_HOSTS = ['*']
->>>>>>> 0ce9365a755e8256be5c2f3d68daf9aedaf333ce
 
 
 # Application definition
@@ -41,11 +28,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-<<<<<<< HEAD
     'whitenoise.middleware.WhiteNoiseMiddleware',
-=======
-    "whitenoise.middleware.WhiteNoiseMiddleware",
->>>>>>> 0ce9365a755e8256be5c2f3d68daf9aedaf333ce
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
