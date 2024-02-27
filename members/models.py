@@ -3,9 +3,9 @@ from time import timezone
 
 # Create your models here.
 class SubmittedData(models.Model):
-    candidate = models.CharField(max_length=20,null=True)
-    time=models.CharField(max_length=30,null=True)
-    list=models.CharField(max_length=60,null=True)
+    candidate = models.CharField(max_length=40,null=True)
+    time=models.CharField(max_length=100,null=True)
+    list=models.CharField(max_length=300,null=True)
 
     
     def __str__(self):       

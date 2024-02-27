@@ -42,7 +42,7 @@ def home(request,name):
     else:
         redirect ("/")   
     
-def question1(request,name):
+def question1_luf(request,name):
     global correct_answer_list
     if request.user.is_authenticated:
         if request.method=="POST":
@@ -58,9 +58,9 @@ def question1(request,name):
         else:
             return render(request,'question1.html')        
     else:
-        return redirect('/login')
+        return redirect('/')
     
-def question2(request,name):
+def question2_gia(request,name):
     global correct_answer_list
     if request.user.is_authenticated:
         if request.method=="POST":
@@ -78,7 +78,7 @@ def question2(request,name):
     else:
         return redirect('/')
     
-def question3(request,name):
+def question3_bhe(request,name):
     global correct_answer_list
     if request.user.is_authenticated:
         if request.method=="POST":
@@ -96,7 +96,7 @@ def question3(request,name):
     else:
         return redirect('/')
     
-def question4(request,name):
+def question4_nob(request,name):
     global correct_answer_list
     if request.user.is_authenticated:
         if request.method=="POST":
@@ -114,7 +114,7 @@ def question4(request,name):
     else:
         return redirect('/')
     
-def question5(request,name):
+def question5_zor(request,name):
     global correct_answer_list
     if request.user.is_authenticated:
         if request.method=="POST":
@@ -132,7 +132,7 @@ def question5(request,name):
     else:
         return redirect('/')
 
-def question6(request,name):
+def question6_kal(request,name):
     global correct_answer_list
     if request.user.is_authenticated:
         if request.method=="POST":
@@ -150,7 +150,7 @@ def question6(request,name):
     else:
         return redirect('/')
 
-def question7(request,name):
+def question7_sun(request,name):
     global correct_answer_list
     if request.user.is_authenticated:
         if request.method=="POST":
@@ -168,7 +168,7 @@ def question7(request,name):
     else:
         return redirect('/')    
     
-def question8(request,name):
+def question8_nar(request,name):
     global correct_answer_list
     if request.user.is_authenticated:
         if request.method=="POST":
