@@ -30,7 +30,7 @@
 
     <div class="question">
         <h2 class=question_title>Question 7: guess the clue</h2>
-        <form method="post" action="/question7/{request.user}">
+        <form method="post" action="/question7_sun/{request.user}">
             {% csrf_token %}
             <div class="form_group">
                 <img src="{% static 'login_bg.jpg' %}" alt="image" height="350px" width="400px" class="img"> <br>

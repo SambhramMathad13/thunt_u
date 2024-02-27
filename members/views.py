@@ -51,7 +51,7 @@ def question1(request,name):
             if answer==correct_answer:
                 correct_answer_list[0]="y"
                 messages.success(request,'Correct answer')
-                return redirect(f'/question2/{request.user}')
+                return redirect(f'/question2_gia/{request.user}')
             else:
                 messages.success(request,'The answer is incorrect')
                 return render(request,'question1.html')
@@ -69,7 +69,7 @@ def question2(request,name):
             if answer==correct_answer:
                 correct_answer_list[1]="y"
                 messages.success(request,'Correct answer. You have successfully completed the quiz.')
-                return redirect(f'/question3/{request.user}')
+                return redirect(f'/question3_bhe/{request.user}')
             else:
                 messages.success(request,'The answer is incorrect')
                 return render(request,'question2.html')
@@ -87,7 +87,7 @@ def question3(request,name):
             if answer==correct_answer:
                 correct_answer_list[2]="y"
                 messages.success(request,'Correct answer')
-                return redirect(f'/question4/{request.user}')
+                return redirect(f'/question4_nob/{request.user}')
             else:
                 messages.success(request,'The answer is incorrect')
                 return render(request,'question3.html')
@@ -105,7 +105,7 @@ def question4(request,name):
             if answer==correct_answer:
                 correct_answer_list[3]="y"
                 messages.success(request,'Correct answer')
-                return redirect(f'/question5/{request.user}')
+                return redirect(f'/question5_zor/{request.user}')
             else:
                 messages.success(request,'The answer is incorrect')
                 return render(request,'question4.html')
@@ -123,7 +123,7 @@ def question5(request,name):
             if answer==correct_answer:
                 correct_answer_list[4]="y"
                 messages.success(request,'Correct answer')
-                return redirect(f'/question6/{request.user}')
+                return redirect(f'/question6_kal/{request.user}')
             else:
                 messages.success(request,'The answer is incorrect')
                 return render(request,'question5.html')
@@ -141,7 +141,7 @@ def question6(request,name):
             if answer==correct_answer:
                 correct_answer_list[5]="y"
                 messages.success(request,'Correct answer')
-                return redirect(f'/question7/{request.user}')
+                return redirect(f'/question7_sun/{request.user}')
             else:
                 messages.success(request,'The answer is incorrect')
                 return render(request,'question6.html')
@@ -159,7 +159,7 @@ def question7(request,name):
             if answer==correct_answer:
                 correct_answer_list[6]="y"
                 messages.success(request,'Correct answer')
-                return redirect(f'/question8/{request.user}')
+                return redirect(f'/question8_nar/{request.user}')
             else:
                 messages.success(request,'The answer is incorrect')
                 return render(request,'question7.html')
