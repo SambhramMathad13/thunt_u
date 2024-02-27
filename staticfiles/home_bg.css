@@ -2,11 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
 
 body {
-<<<<<<< HEAD
     background-image: url('./login_bg.jpg');
-=======
-    background-image: url(login_bg.jpg);
->>>>>>> 0ce9365a755e8256be5c2f3d68daf9aedaf333ce
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
