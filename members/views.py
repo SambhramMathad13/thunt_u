@@ -24,7 +24,7 @@ def login_user(request):
         user=authenticate(request,username=username,password=password)
         if user is not None:
             start=timezone.now()
-            start_indian_timezone = start.astimezone(pytz.timezone('Asia/Kolkata')).replace(hour=12, minute=0, second=0, microsecond=0)
+            start_indian_timezone = start.astimezone(pytz.timezone('Asia/Kolkata')).replace(hour=16, minute=0, second=0, microsecond=0)
             # start_indian_timezone = start.astimezone(pytz.timezone('Asia/Kolkata'))
             print(start_indian_timezone,"start timer")
             login(request,user)
